@@ -1,0 +1,14 @@
+<!--<div class="product-card" *isChicken="product-card.description">-->
+<div class="product" >
+  <div class="product-image" *ngIf="product.image">
+<!--    <img src="assets/images/{{product.image}}" alt="pizza">-->
+    <img src="{{product.image}}" alt="pizza">
+  </div>
+  <custom-title [title]="product.title"></custom-title>
+  <div class="product-text">{{product.description}}</div>
+  <div class="product-action">
+    <a class="btn btn-add-to-card" routerLink="/order" [queryParams]="{product: product.title}">В корзину</a>
+    <a class="btn btn-white" [routerLink]="['/product', product.id]">Подробнее</a>
+  </div>
+</div>
+
